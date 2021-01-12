@@ -13,11 +13,28 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-
 //Log bot is ready and set status.
 client.on('ready', () => {
-    client.user.setActivity('Mmmm, bread', { type: 'PLAYING'});
+    client.user.setActivity('Mmmm, Bread', { type: 'PLAYING'});
     console.log('Bot online.');
+});
+
+
+//Join message
+client.on('guildMemberAdd', member => {
+    const guild = client.guilds.cache.get('734986058361733185');
+    const welcomeChannel = client.channels.cache.get('798409162576625684');
+
+    var welcomes = [
+        `NO WAY!!1!11 Its ${member}!`,
+        `Is that, is that a, is that ${member}!!`,
+        `Holy guacamole! Its ${member}!`,
+        `Welcome to the bread bank, we sell bread, we sell loafs. We got bread on deck, bread on the floor. **TOASTED**. ***ROASTED***. Listen, I just need a baguette and a brioche. We dont have either of those ${member}.`
+
+    ]
+    var sayWelcome = Math.floor(Math.random() * welcomes.length);
+    welcomeChannel.send(`${welcomes[sayWelcome]} Welcome to **${guild.name}**! Make sure to read all the important stuff in <#736051710694391939> and then select your roles in <#736051676770992238>! Enjoy your stay :bread:`);
+    console.log('member joined');
 });
 
 //Command handler. I think? lmao
@@ -33,7 +50,7 @@ client.on('message', message => {
     }
     catch(error){
         console.error(error);
-        message.channel.send('An error occoured.')
+        message.channel.send('An error occured. Dont @ me.')
     }
 });
 
