@@ -1,0 +1,27 @@
+{
+  "name": "bread-bot",
+  "version": "1.0.0",
+  "description": "A general use bot made by Parkeymon",
+  "main": "main.js",
+  "scripts": {
+    "test": "ping"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parkeymon/Bread-Bot.git"
+  },
+  "keywords": [
+    "discordjs",
+    "discord",
+    "bot"
+  ],
+  "author": "Parkeymon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Parkeymon/Bread-Bot/issues"
+  },
+  "homepage": "https://github.com/Parkeymon/Bread-Bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
