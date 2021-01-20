@@ -2,7 +2,7 @@ const { description } = require("./serverinfo")
 
 module.exports = {
     name: 'help',
-    execute(message, args){
+    execute(message, args, Discord){
         const helpEmbed = new Discord.MessageEmbed()
         .setColor('#ff0000')
         .setTitle('HELP!')
