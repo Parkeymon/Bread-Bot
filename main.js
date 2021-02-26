@@ -34,8 +34,14 @@ client.on('guildMemberAdd', member => {
     ]
     var sayWelcome = Math.floor(Math.random() * welcomes.length);
     welcomeChannel.send(`${welcomes[sayWelcome]} Welcome to **${guild.name}**! Make sure to read all the important stuff in <#736051710694391939> and then select your roles in <#736051676770992238>! Enjoy your stay :bread:`);
-    console.log('member joined');
+    console.log(`Member Joined with username: ${member}`);
 });
+
+//Leave logs
+client.on('guildMemberRemove', member => {
+    console.log(`Member left server with username: ${member}`)
+});
+
 
 //Command handler. I think? lmao
 client.on('message', message => {
